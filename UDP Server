@@ -1,0 +1,33 @@
+import java.nio.file.*;
+public class TCPServer
+{
+	public ststic void main(String[] args) throws IOException
+	{
+		ServerSocket server
+		DataOutputStream out = null;
+		DataInputStream in;
+		try
+		{
+			server = new ServerSocket(6000,1);//port number and num of connections
+			System.out.println("Server Waiting for client");
+			
+			System.out.println("Client connected");
+			
+			in = new DataInputSream(socket.getInputStream());
+			out = new DataInputStream(socket.getOutputStream());
+			
+			String fileName = in.readUTF();
+			System.out.println("File Requested is :"+ fileName);
+			byte[] filedata = Files.readAIIBytes(Paths.get(fileName));
+			String filecontent = new String(filedata);
+			
+			out.writeUTF(fileContent.toString());
+			Syestem.out.println("FILE SENT SUCCESSFULLY");
+		}
+		catch(exception e)
+		{
+			System.out.println(e.getMessage());
+			out.writeUTF("FILE DOESN'T EXISTS");
+		}
+	}
+}
