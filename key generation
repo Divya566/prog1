@@ -1,0 +1,33 @@
+import java.util*;
+import java.math.BigInteger;
+import java.lang.*;
+class RSA
+{
+	public static void mian(Sting[] args)
+	{
+		Random r = new Random();
+		Random r2 = new Random();
+		int e = integer.parseInt(args[0]);
+		BigInteger p = BigInteger.probablePrime(4,r);
+		bigInteger q = BigInteger.probablePrime(4,r2);
+		BigInteger n = p.mulyiply(q);
+		BigInteger p1 = p.substract(new BigInteger("l");
+		BigInteger q1 = q.substract(new BigInteger("l");
+		BigInteger phi = p1.multiply(q1);
+		while (true)
+		{
+			BigInteger GCD = phi.gcd(new BigInteger(""+e));
+			
+			if(GCD.equals(BigInteger.ONE))
+			{
+				break;
+			}
+			e++;
+		}
+		BigInteger a = new BigInteger(""+e);
+		BigInteger d = a.modInverse(phi0;
+		System.out.println("public key:"+a+","+n);
+		System.out.println("Detection key:"+d+","+n);
+	}
+}
+	
